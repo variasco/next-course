@@ -1,7 +1,10 @@
-import React from "react";
-import { Button, Htag, Ptag, Tag } from "../components";
+import { useState } from "react";
+import { Button, Htag, Ptag, Rating, Tag } from "../components";
+import { withLayout } from "../layout/Layout";
 
-export default function Home() {
+function Home() {
+  const [rating, setRating] = useState<number>(4);
+
   return (
     <>
       <Htag style={{ margin: "10px 0" }} tag="h2">
@@ -15,6 +18,7 @@ export default function Home() {
       <Button appearance="primary" arrow="right">
         Кнопка4
       </Button>
+
       <Htag style={{ margin: "10px 0" }} tag="h2">
         Параграфы
       </Htag>
@@ -22,6 +26,7 @@ export default function Home() {
       <Ptag size="14px">Параграф малый</Ptag>
       <Ptag size="18px">Параграф большой</Ptag>
       <Ptag>Параграф без параметров</Ptag>
+
       <Htag style={{ margin: "10px 0" }} tag="h2">
         Теги
       </Htag>
@@ -33,6 +38,14 @@ export default function Home() {
         Краcный m
       </Tag>
       <Tag color="primary">Основной</Tag>
+
+      <Htag style={{ margin: "10px 0" }} tag="h2">
+        Рейтинг
+      </Htag>
+      <Rating rating={rating} editable setRating={setRating} />
+      <Rating rating={3} />
     </>
   );
 }
+
+export default withLayout(Home);

@@ -3,8 +3,6 @@ import { ButtonProps } from "./Button.props";
 import cn from "classnames";
 import ArrowIcon from "./arrow.svg";
 
-console.log(ArrowIcon);
-
 export function Button({
   appearance = "primary",
   arrow = "none",
