@@ -1,7 +1,11 @@
-import React from "react";
+import { Menu } from "../Menu/Menu";
 import { SidebarProps } from "./Sidebar.props";
-import styles from "./Sidebar.module.css";
 
 export function Sidebar({ ...props }: SidebarProps): JSX.Element {
-  return <div {...props}>***Sidebar***</div>;
+  return (
+    <div {...props}>
+      <h3>***Sidebar***</h3>
+      <Menu />
+    </div>
+  );
 }
